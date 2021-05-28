@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Head -->
+
+<head>
+
+	<title>Home</title>
+
+	<!-- For-Mobile-Apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+	<script
+		type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //For-Mobile-Apps -->
+
+	<!-- Style -->
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+
+</head>
+<!-- Head -->
+
+
+
+<!-- Body -->
+
+<body class="app" >
+
+	<!-- Container -->
+	<div class="container" id="app">
+
+		<!-- City -->
+		<div class="city">
+			<div class="title">
+				<input  @keyup.enter='searchWeather' v-model='city' type="text" class="input_txt" placeholder="city">
+				<button @click="searchWeather" class="input_sub">Search</button>
+			
+			</div>
+			<div class="date-time">
+				<div class="dmy">
+					<div id="txt"></div>
+					<div class="date">
+
+					</div>
+				</div>
+				<div class="temperature">
+					<p><span>{{city}}</span></p>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<!-- //City -->
+
+
+
+		<!-- Forecast -->
+		<div class="forecast">
+			
+			<div class="today-weather">
+				<ul>
+					<li v-for='item in weatherList'>{{item.date}} <span> {{item.high}}</span></li>
+
+				</ul>
+			</div>
+		</div>
+		<!-- //Forecast -->
+		<div class="clear"></div>
+
+	</div>
+	<!-- //Container -->
+	
+	<script src="/js/vue.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="/js/main.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>
